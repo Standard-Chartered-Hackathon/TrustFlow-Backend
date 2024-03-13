@@ -16,9 +16,9 @@ exports.processImage = async (req, res) => {
 
   const { aadhaarCardNo, panCardNo } = user;
 
-  console.log("aadhaarNo: ", aadhaarCardNo);
-  console.log("panNo: ", panCardNo);
-  console.log("imgurl: ", imgUrl);
+  // console.log("aadhaarNo: ", aadhaarCardNo);
+  // console.log("panNo: ", panCardNo);
+  // console.log("imgurl: ", imgUrl);
   try {
     const response = await axios.post(`${process.env.EC2FLASKURI}`, {
       imgUrl,
