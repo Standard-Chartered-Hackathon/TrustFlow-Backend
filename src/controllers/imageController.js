@@ -5,9 +5,8 @@ const axios = require("axios");
 
 exports.processImage = async (req, res) => {
   const { imgUrl } = req.body;
-  const { userId } = req.params; // Get userId from URL params
+  const { userId } = req.params;
 
-  // Fetching Aadhaar ID from user data
   const user = await userData.findOne({ userId: userId });
 
   if (!user) {
@@ -16,15 +15,13 @@ exports.processImage = async (req, res) => {
 
   const { aadhaarCardNo, panCardNo } = user;
 
-  // console.log("aadhaarNo: ", aadhaarCardNo);
-  // console.log("panNo: ", panCardNo);
-  // console.log("imgurl: ", imgUrl);
   try {
     const response = await axios.post(`${process.env.EC2FLASKURI}`, {
       imgUrl,
       panCardNo,
-      aadhaarCardNo, // Sending Aadhaar ID along with the image URL
+      aadhaarCardNo,
     }); // change current url to your ec2 flask url
+    console.log(response);
     res.json(response.data);
   } catch (error) {
     console.error("Error processing image:", error);
