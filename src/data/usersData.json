@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "isKYC": false,
+      "accountNumber": "123456789",
+      "password": "password1",
+      "userId": "user1",
+      "username": "John Doe",
+      "dateOfBirth": "1990-01-01",
+      "incomeRange": "High",
+      "aadhaarCardNo": "123456789012",
+      "panCardNo": "ABCDE1234F"
+    },
+    {
+      "isKYC": false,
+      "accountNumber": "987654321",
+      "password": "password2",
+      "userId": "user2",
+      "username": "Jane Doe",
+      "dateOfBirth": "1995-05-05",
+      "incomeRange": "Medium",
+      "aadhaarCardNo": "987654321098",
+      "panCardNo": "FGHIJ5678K"
+    }
+  ]
+}
