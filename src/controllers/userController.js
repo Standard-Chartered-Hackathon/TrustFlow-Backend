@@ -55,13 +55,13 @@ exports.updateKYCStatus = async (req, res) => {
 };
 
 exports.checkUserData = async (req, res) => {
-  const { username, dateOfBirth, aadhaarCardNo, panCardNo, imgUrl } = req.body;
+  const { username, dateOfBirth, aadhaarCardNo, panCardNo } = req.body;
   const { userId } = req.params;
 
   try {
     const user = await userData.findOne({ userId: userId });
     // console.log(user);
-    console.log(imgUrl);
+    // console.log(imgUrl);
 
     if (!user) {
       return res
