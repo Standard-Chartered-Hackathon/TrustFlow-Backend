@@ -61,7 +61,6 @@ exports.checkUserData = async (req, res) => {
   try {
     const user = await userData.findOne({ userId: userId });
     // console.log(user);
-    // console.log(imgUrl);
 
     if (!user) {
       return res
