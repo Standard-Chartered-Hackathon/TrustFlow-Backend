@@ -4,7 +4,7 @@ const userData = require("../../mongodb/models/User");
 const axios = require("axios");
 
 exports.processImage = async (req, res) => {
-  const { imgKey } = req.body;
+  const { imageKey } = req.body;
   const { userId } = req.params;
 
   const user = await userData.findOne({ userId: userId });
@@ -17,7 +17,7 @@ exports.processImage = async (req, res) => {
 
   try {
     const response = await axios.post(`${process.env.EC2FLASKURI}`, {
-      imgKey,
+      imageKey,
       panCardNo,
       aadhaarCardNo,
     }); // change current url to your ec2 flask url
